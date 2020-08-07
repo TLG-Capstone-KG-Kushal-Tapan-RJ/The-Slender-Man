@@ -119,8 +119,13 @@ public final class Game {
       System.out.println("Try Another Command.");
       start(in);
     }
-
-    winCondition();
+    System.out.println(currentScene.getSceneName());
+    if (currentScene == aTree) {
+      if (Player.getNumItemsPlayerHas() >= Player.TOTAL_NUM_ITEMS_TO_FINISH_GAME) {
+        winMessage.winMessage();
+      }
+    }
+//    winCondition();
   }
 
   private void playerMovement(Scanner in, String direction) throws Exception {
