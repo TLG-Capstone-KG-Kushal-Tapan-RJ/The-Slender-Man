@@ -241,11 +241,11 @@ public class House extends Scene {
     }
   }
 
-  public void leaveHouse() {
+  public void leaveHouse() throws InterruptedException {
     displayStories("leaveHouse");
   }
 
-  public void unlockLockBox(Player player) {
+  public void unlockLockBox(Player player) throws InterruptedException {
     if (playerHasItem(player, "key")) {
 
       player.addItemToInventory(Lighter);
@@ -257,7 +257,7 @@ public class House extends Scene {
     }
   }
 
-  public void lockBoxChoices() {
+  public void lockBoxChoices() throws InterruptedException {
     displayStories("lockBoxChoices");
   }
 
@@ -272,8 +272,8 @@ public class House extends Scene {
   }
 
   /** For accessing and displaying stories in Resource Bundle file */
-  private void displayStories(String key) {
-    System.out.println("\n\n");
+  private void displayStories(String key) throws InterruptedException {
+    Thread.sleep(3000);
     Console.clearScreen();
     _max_iteration_not_reached = false;
     for (int i = 0; i < MAX_ITERATION_DISPLAY_STORIES; i++) {
