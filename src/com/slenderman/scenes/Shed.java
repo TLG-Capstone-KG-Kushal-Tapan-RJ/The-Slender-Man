@@ -71,8 +71,10 @@ public class Shed extends Scene {
 
     choice = playerChoice();
     if (choice.equals("0")) {
+      Console.clearScreen();
       stepIntoTheShed();
     } else if (choice.equals("1")) {
+      Console.clearScreen();
       goSomewhereElse();
 
     } else {
