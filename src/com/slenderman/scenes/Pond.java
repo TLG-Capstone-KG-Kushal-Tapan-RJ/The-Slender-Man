@@ -348,6 +348,8 @@ public class Pond extends Scene {
   }
 
   private void displayStories(String key) {
+    System.out.println("\n\n");
+    Console.clearScreen();
     _max_iteration_not_reached = false;
     for (int i = 0; i < MAX_ITERATION_DISPLAY_STORIES; i++) {
       try {

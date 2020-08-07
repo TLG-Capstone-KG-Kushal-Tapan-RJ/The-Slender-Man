@@ -44,10 +44,10 @@ public class Shed extends Scene {
 
   @Override
   public void enter(Scanner in, Player player) throws Exception {
+    Console.clearScreen();
     this.player = player;
     choice = in;
     Console.updateMap(this.getSceneName());
-    Console.clearScreen();
     inFrontOfShed();
   }
 
@@ -71,10 +71,8 @@ public class Shed extends Scene {
 
     choice = playerChoice();
     if (choice.equals("0")) {
-      Console.clearScreen();
       stepIntoTheShed();
     } else if (choice.equals("1")) {
-      Console.clearScreen();
       goSomewhereElse();
 
     } else {
@@ -152,6 +150,8 @@ public class Shed extends Scene {
 
   /** For accessing and displaying stories in Resource Bundle file */
   private void displayStories(String key) {
+    System.out.println("\n\n");
+    Console.clearScreen();
     _max_iteration_not_reached = false;
     for (int i = 0; i < MAX_ITERATION_DISPLAY_STORIES; i++) {
       try {

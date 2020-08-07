@@ -81,10 +81,8 @@ public class Cave extends Scene {
     displayStories("inFront");
     String choice = playerChoice();
     if (choice.equals("0")) {
-      Console.clearScreen();
       stepIntoTheCave();
     } else {
-      Console.clearScreen();
       walkAroundInFrontOfCave();
     }
   }
@@ -92,10 +90,8 @@ public class Cave extends Scene {
   private void stepIntoTheCave() throws InterruptedException {
     if (isPlayerWithBoat) {
       System.out.println(textPainter(bundle.getString("stepIntoTheCave_withBoat")));
-      Console.clearScreen();
       exploreCaveChoice();
     } else {
-      Console.clearScreen();
       displayStories("stepIntoTheCave");
 
       if (checkItems()) {
@@ -103,7 +99,6 @@ public class Cave extends Scene {
       } else {
         System.out.println(textPainter(bundle.getString("stepIntoTheCave_notEnoughItem")));
         Sound.play(new File("./Speech/Cave/Run.mp3"));
-        Console.clearScreen();
         inFrontOfCave();
       }
     }
@@ -149,19 +144,15 @@ public class Cave extends Scene {
     String choice = playerChoice();
     switch (choice) {
       case "0":
-//        Console.clearScreen();
         investigateTheBushes();
         break;
       case "1":
-//        Console.clearScreen();
         inFrontOfCave();
         break;
       case "2":
-//        Console.clearScreen();
         displayStories("walkAroundInFrontOfCave_option2");
         break;
       default:
-//        Console.clearScreen();
         walkAroundInFrontOfCave();
     }
   }
@@ -225,16 +216,13 @@ public class Cave extends Scene {
   private void exploreCave_LookRight() throws InterruptedException {
     if (isPlayerWithBoat) {
       System.out.println(textPainter(bundle.getString("exploreCave_LookRight_withBoat")));
-      Console.clearScreen();
       exploreCaveChoice();
     } else {
       displayStories("exploreCave_LookRight");
       String choice = playerChoice().toUpperCase();
       if (choice.equals("Y")) {
-        Console.clearScreen();
         exploreCave_UnlockCode();
       } else {
-        Console.clearScreen();
         exploreCaveChoice();
       }
     }
@@ -341,6 +329,8 @@ public class Cave extends Scene {
 
   /** For accessing and displaying stories in Resource Bundle file */
   private void displayStories(String key) {
+    System.out.println("\n\n");
+    Console.clearScreen();
     _max_iteration_not_reached = false;
     for (int i = 0; i < MAX_ITERATION_DISPLAY_STORIES; i++) {
       try {
