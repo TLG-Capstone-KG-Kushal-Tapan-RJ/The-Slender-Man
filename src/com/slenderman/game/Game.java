@@ -117,6 +117,7 @@ public final class Game {
     } else {
       System.out.println("Unknown Command of: " + userText);
       System.out.println("Try Another Command.");
+      start(in);
     }
 
     winCondition();
