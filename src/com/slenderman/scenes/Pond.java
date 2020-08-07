@@ -347,8 +347,8 @@ public class Pond extends Scene {
         Scene.ANSI_WHITE);
   }
 
-  private void displayStories(String key) {
-    System.out.println("\n\n");
+  private void displayStories(String key) throws InterruptedException {
+    Thread.sleep(3000);
     Console.clearScreen();
     _max_iteration_not_reached = false;
     for (int i = 0; i < MAX_ITERATION_DISPLAY_STORIES; i++) {

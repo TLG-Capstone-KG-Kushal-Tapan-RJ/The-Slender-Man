@@ -82,12 +82,13 @@ public class Shed extends Scene {
     }
   }
 
-  private void goSomewhereElse() {
+  private void goSomewhereElse() throws InterruptedException {
     displayStories("goSomewhereElse");
   }
 
   private void stepIntoTheShed() throws InterruptedException, FileNotFoundException {
     displayStories("stepIntoTheShed");
+    Thread.sleep(5000);
     takeShinyThingChoice();
   }
 
@@ -149,8 +150,8 @@ public class Shed extends Scene {
   }
 
   /** For accessing and displaying stories in Resource Bundle file */
-  private void displayStories(String key) {
-    System.out.println("\n\n");
+  private void displayStories(String key) throws InterruptedException {
+    Thread.sleep(3000);
     Console.clearScreen();
     _max_iteration_not_reached = false;
     for (int i = 0; i < MAX_ITERATION_DISPLAY_STORIES; i++) {
