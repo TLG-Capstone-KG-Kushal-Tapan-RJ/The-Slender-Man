@@ -89,7 +89,7 @@ public final class Game {
   void start(Scanner in) throws Exception {
     String userText = "";
     String[] words = null;
-
+    winCondition();
     if (!SlenderMan.isGameDone) {
       slenderManProgressionStatus(Player.getInventory().size());
       userText = in.nextLine().toLowerCase();
@@ -100,7 +100,6 @@ public final class Game {
       Player.changeInvItemsLocation();
       currentScene.enter(in, Player);
     }
-
     assert Objects.requireNonNull(words)[0] != null;
     assert Objects.requireNonNull(words)[1] != null;
 
@@ -119,13 +118,6 @@ public final class Game {
       System.out.println("Try Another Command.");
       start(in);
     }
-    System.out.println(currentScene.getSceneName());
-    if (currentScene == aTree) {
-      if (Player.getNumItemsPlayerHas() >= Player.TOTAL_NUM_ITEMS_TO_FINISH_GAME) {
-        winMessage.winMessage();
-      }
-    }
-//    winCondition();
   }
 
   private void playerMovement(Scanner in, String direction) throws Exception {

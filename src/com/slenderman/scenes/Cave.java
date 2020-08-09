@@ -176,6 +176,7 @@ public class Cave extends Scene {
 
   private void exploreCave() throws InterruptedException {
     displayStories("exploreCave");
+    Sound.play(new File("./Speech/Cave/torchLighter.mp3"));
     exploreCaveChoice();
   }
 
@@ -194,12 +195,12 @@ public class Cave extends Scene {
   /** Change Scene to Pond */
   private void exploreCave_LookLeft() throws InterruptedException {
     displayStories("exploreCave_LookLeft_intro");
+    Sound.play(new File("./Speech/Cave/caveLeft.mp3"));
     if (isPlayerWithBoat) {
       displayStories("exploreCave_LookLeft_withBoat");
       String choice = playerChoice().toUpperCase();
       if (choice.equals("Y")) {
         displayStories("exploreCave_LookLeft_withBoat_y");
-
       } else {
         sendToExploreCaveChoice();
       }
@@ -230,6 +231,7 @@ public class Cave extends Scene {
 
   private void exploreCave_UnlockCode() throws InterruptedException {
     displayStories("exploreCave_UnlockCode");
+    Sound.play(new File("./Speech/Cave/caveRight.mp3"));
     if (localItems.contains("NOTEBOOK")) {
       displayStories("exploreCave_UnlockCode_withNoteBook");
     }
