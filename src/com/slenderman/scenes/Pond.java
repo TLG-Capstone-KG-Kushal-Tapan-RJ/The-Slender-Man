@@ -71,6 +71,7 @@ public class Pond extends Scene {
 
     Console.updateImage(pond);
     displayStories("inFront");
+    Sound.play(new File("./Speech/Pond/pond.mp3"));
     inFrontOfPondChoice(in);
   }
 
@@ -268,6 +269,7 @@ public class Pond extends Scene {
       } else if (!memoOnStones) {
         memoOnStones = true;
         displayStories("WalkAround_Right_LookDown_MemoOnStones");
+        Sound.play(new File("./Speech/Pond/flames.mp3"));
         inFrontOfPondChoice(in);
       } else {
         displayStories("WalkAround_Right_LookDown_Nothing");

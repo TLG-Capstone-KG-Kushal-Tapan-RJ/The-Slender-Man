@@ -74,7 +74,6 @@ public class Shed extends Scene {
       stepIntoTheShed();
     } else if (choice.equals("1")) {
       goSomewhereElse();
-
     } else {
       displayStories("inFrontShed_WrongInput");
 
@@ -88,7 +87,7 @@ public class Shed extends Scene {
 
   private void stepIntoTheShed() throws InterruptedException, FileNotFoundException {
     displayStories("stepIntoTheShed");
-    Thread.sleep(5000);
+    Sound.play(new File("./Speech/Shed/coatPocket.mp3"));
     takeShinyThingChoice();
   }
 

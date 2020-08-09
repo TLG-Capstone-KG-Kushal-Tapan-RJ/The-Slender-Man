@@ -10,7 +10,7 @@ public class WinMessage {
     int slowest = 5000;
 
     Thread.sleep(quickest);
-    System.out.println("You walk slowly towards a lonely tree in the middle of a field...\n");
+    System.out.println("\nYou walk slowly towards a lonely tree in the middle of a field...\n");
     Thread.sleep(middle);
     System.out.println("Something tells you to carve an X on the tree...\n");
     Thread.sleep(middle);
@@ -36,7 +36,8 @@ public class WinMessage {
     Thread.sleep(slow);
     System.out.println("...\n");
     Thread.sleep(slowest);
-    System.out.println("You have killed SlenderMan!\n");
+    Console.clearScreen();
+    System.out.println("\nYou have killed SlenderMan!\n");
     Thread.sleep(middle);
     System.out.println("You let out a sigh of relief as the sun rises over the thick woods.\n");
     System.out.println(
